@@ -7,4 +7,14 @@ import { Injectable } from '@angular/core';
 export class ServiceService {
 
   constructor(private http: HttpClient) { }
+  fetchUsers() {
+    this.http.get("").subscribe{
+      next: {
+
+      },
+      error: {
+
+      }
+    }
+  }
 }
