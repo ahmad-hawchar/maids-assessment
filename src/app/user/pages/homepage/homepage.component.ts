@@ -10,6 +10,9 @@ import { User } from '../../interfaces/user';
 export class HomepageComponent {
   constructor(private userService: userService) { }
   users!: User[];
+  search() {
+
+  }
   ngOnInit(): void {
     console.log(this.userService.fetchUsers(1).subscribe({
       next: (res: any) => {

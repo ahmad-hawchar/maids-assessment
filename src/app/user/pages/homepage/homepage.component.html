@@ -1,7 +1,26 @@
 <div class="list-container">
-    <div class="list-item-container" *ngIf="users">
-        <div class="list-item" *ngFor="let user of users">
-            {{user.id}}
+    <div *ngIf="users;else noUsers">
+        <div class="animation-container">
+            <div class="list-item" *ngFor="let user of users">
+                <img class="user-avatar" [src]="user.avatar" alt="">
+                <div class="user-info-container">
+                    <div class="user-id">
+                        user ID: {{user.id}}
+                    </div>
+                    <div class="user-first-name">
+                        First name: {{user.first_name}}
+                    </div>
+                    <div class="user-last-name">
+                        Last name: {{user.last_name}}
+                    </div>
+                    <div class="user-email">
+                        Email: {{user.email}}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <ng-template #noUsers>
+        no users Found!
+    </ng-template>
 </div>

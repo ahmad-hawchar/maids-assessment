@@ -1,5 +1,5 @@
 .header-container {
-    height: 47px;
+    height: 60px;
     background-color: #eaedf0;
     margin: auto;
     display: flex;
@@ -9,4 +9,5 @@
 .header {
     max-width: 1200px;
     margin: auto;
+    padding: 0 20px;
 }
