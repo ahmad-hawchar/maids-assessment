@@ -1,0 +1,12 @@
+.header-container {
+    height: 47px;
+    background-color: #eaedf0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    max-width: 1200px;
+    margin: auto;
+}
