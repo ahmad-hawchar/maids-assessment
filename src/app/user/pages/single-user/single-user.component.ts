@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { userService } from '../../services/user.service';
+import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-single-user',
@@ -9,7 +10,7 @@ import { userService } from '../../services/user.service';
   styleUrl: './single-user.component.css'
 })
 export class SingleUserComponent {
-  userData: any = "";
+  userData!: User | any;
   msg: string = "";
   constructor(private userService: userService, private route: ActivatedRoute) {
     //subscribes to the parameters that are available on the route.
@@ -19,12 +20,12 @@ export class SingleUserComponent {
       this.fetchOne(params['id']);
     })
   }
-  fetchOne(id: string) {
+  fetchOne(id: number) {
     //calls the fetchOneUser service with the id of the used passed in the parameters
     //it subscribes to the observable returned by the service and then it puts it in the userData variable
     this.userService.fetchOneUser(id).subscribe({
-      next: (res) => {
-        this.userData = res
+      next: (res: any) => {
+        this.userData = res.data
         console.log(res)
       },
       error: (err) => {

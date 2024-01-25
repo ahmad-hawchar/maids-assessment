@@ -16,7 +16,7 @@ import { AnimationDirective } from './directives/animation.directive';
     SingleUserComponent,
     UsermainComponent,
     HeaderComponent,
-    AnimationDirective
+    AnimationDirective,
   ],
   imports: [
     CommonModule,

@@ -1,1 +1,10 @@
-.page
+<div class="user-profile-page-container">
+    <div class="user-profile-container" *ngIf="userData;else notFound">
+        test <a href="user/homepage">homepage</a>
+    </div>
+    <ng-template #notFound>
+        <div class="centered">
+            user not found! go back to <a routerLink="/user/homepage">homepage</a>
+        </div>
+    </ng-template>
+</div>

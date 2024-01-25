@@ -12,8 +12,8 @@
     gap: 40px;
 }
 
-.animation-container {
-    position: relative;
+.list-item:hover {
+    cursor: pointer;
 }
 
 .user-avatar {
@@ -30,6 +30,22 @@
 .user-first-name,
 .user-last-name {
     min-width: 130px;
+}
+
+.pages {
+    display: flex;
+    justify-content: center;
+}
+
+.page-number {
+    padding: 5px 10px;
+    background-color: #eaedf0;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.page-number:hover {
+    background-color: #b8bdc2;
 }
 
 @media(max-width:900px) {
