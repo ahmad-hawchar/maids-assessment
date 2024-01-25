@@ -5,6 +5,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { SingleUserComponent } from './pages/single-user/single-user.component';
 import { UsermainComponent } from './usermain/usermain.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { UsermainComponent } from './usermain/usermain.component';
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    HttpClientModule
   ]
 })
 export class UserModule { }
