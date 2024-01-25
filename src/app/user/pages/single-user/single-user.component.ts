@@ -26,7 +26,6 @@ export class SingleUserComponent {
     this.userService.fetchOneUser(id).subscribe({
       next: (res: any) => {
         this.userData = res.data
-        console.log(res)
       },
       error: (err) => {
         this.msg = "error"

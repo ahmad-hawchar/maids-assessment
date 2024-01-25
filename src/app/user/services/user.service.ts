@@ -24,7 +24,7 @@ export class userService {
     }
     return this.http.get(`${this.backendUrl}/${userId}`).pipe(
       map((res: any) => {
-        if (res) this.cache.set(userId, res.data);
+        if (res) this.cache.set(userId, res);
         return res;
       }));
   }
