@@ -17,7 +17,6 @@ export class HomepageComponent {
     console.log(this.userService.fetchUsers(1).subscribe({
       next: (res: any) => {
         this.users = res.data;
-        console.log(this.users)
       },
       error: (err) => {
         console.log(err)
