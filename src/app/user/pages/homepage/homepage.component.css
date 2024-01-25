@@ -10,17 +10,10 @@
     display: flex;
     align-items: center;
     gap: 40px;
-    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
 }
 
 .animation-container {
     position: relative;
-}
-
-.list-item:hover {
-    box-shadow: rgba(18, 18, 19, 0.2) 0px 7px 29px 0px;
-    transform: translate(5px, -5px);
-    transition-duration: ease 200ms;
 }
 
 .user-avatar {

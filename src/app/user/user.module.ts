@@ -7,6 +7,7 @@ import { SingleUserComponent } from './pages/single-user/single-user.component';
 import { UsermainComponent } from './usermain/usermain.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
+import { AnimationDirective } from './directives/animation.directive';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HeaderComponent } from './header/header.component';
     HomepageComponent,
     SingleUserComponent,
     UsermainComponent,
-    HeaderComponent
+    HeaderComponent,
+    AnimationDirective
   ],
   imports: [
     CommonModule,
