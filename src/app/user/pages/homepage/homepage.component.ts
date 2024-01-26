@@ -1,21 +1,28 @@
 import { Component } from '@angular/core';
 import { userService } from '../../services/user.service';
 import { User } from '../../interfaces/user';
+import { selectSearchText } from '../../state/user.selectors';
+import { Store } from '@ngrx/store';
+import { loadSearchContent } from '../../state/user.actions';
+import { AppState } from '../../state/app-state';
 import { Observable } from 'rxjs';
-import { Store, select } from '@ngrx/store';
-import { selectSearch } from '../../actions/user.selectors';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css'
 })
 export class HomepageComponent {
-  users!: User[];
+  users: User[] = [];
   usersTemp!: User[];
-  searchValue: Observable<string>;
+  searchText$: Observable<string>;
   pages: { number: number, selected: boolean }[] = [];
-  constructor(private userService: userService, private store: Store) {
-    this.searchValue = store.pipe(select(selectSearch));
+  constructor(private userService: userService, private store: Store<AppState>) {
+    this.searchText$ = this.store.select(selectSearchText);
+  }
+  onSearchChange(searchTerm: string) {
+    this.usersTemp = this.users.filter(user =>
+      user.first_name.indexOf(searchTerm) != -1 || user.last_name.indexOf(searchTerm) != -1 || user.id.toString().indexOf(searchTerm) != -1 || user.email.indexOf(searchTerm) != -1
+    )
   }
   search(page: number) {
     //this is called when the component is initialised. it fetches the user data and puts them in the users variable
@@ -24,7 +31,8 @@ export class HomepageComponent {
     this.userService.fetchUsers(page).subscribe({
       next: (res: any) => {
         this.pages = [];
-        this.users, this.usersTemp = res.data;
+        this.users = res.data;
+        this.usersTemp = res.data
         for (let i = 1; i <= res.total_pages; i++) {
           this.pages.push({ number: i, selected: false })
         }
@@ -36,13 +44,12 @@ export class HomepageComponent {
   }
   ngOnInit(): void {
     this.search(1);
-    this.searchValue.subscribe(searchTerm => {
-      this.onSearchChange(searchTerm);
+    this.store.subscribe({
+      next: (e: any) => {
+        this.onSearchChange(e.search.searchText)
+      }, error: (e) => {
+        console.log(e);
+      }
     });
-  }
-  onSearchChange(searchTerm: string) {
-    this.usersTemp = this.users.filter((user) => {
-      return user.first_name.indexOf(searchTerm) || user.last_name.indexOf(searchTerm) || user.id.toString().indexOf(searchTerm) || user.email.indexOf(searchTerm)
-    })
   }
 }

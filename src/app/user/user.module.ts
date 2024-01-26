@@ -8,9 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { AnimationDirective } from './directives/animation.directive';
 import { StoreModule } from '@ngrx/store';
-import { searchReducer } from './actions/user.reducers';
-
-
 @NgModule({
   declarations: [
     HomepageComponent,
@@ -23,7 +20,7 @@ import { searchReducer } from './actions/user.reducers';
     CommonModule,
     UserRoutingModule,
     HttpClientModule,
-
+    StoreModule
   ]
 })
 export class UserModule { }

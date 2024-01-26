@@ -2,7 +2,7 @@
     <div class="header">
         <div class="search-bar">
             <input #searchInput type="text" class="text-inputs-global" placeholder="search by name, email or Id!"
-                (change)="onSearchChange(searchInput.value)" />
+                (keyup)="onSearchChange(searchInput.value)" />
         </div>
     </div>
 </div>
