@@ -48,6 +48,10 @@
     background-color: #b8bdc2;
 }
 
+.bar-container {
+    height: 20px;
+}
+
 @media(max-width:900px) {
     .user-info-container {
         flex-direction: column;

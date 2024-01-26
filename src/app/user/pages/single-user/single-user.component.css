@@ -1,5 +1,5 @@
 .user-profile-page-container {
-    margin: 0 20px 40px 20px;
+    margin: 40px 20px;
 }
 
 .user-profile-container {
@@ -29,7 +29,7 @@
 svg {
     height: 50px;
     cursor: pointer;
-    margin: 20px;
+    margin: 0 20px 20px 20px;
 }
 
 .back-arrow {
@@ -37,6 +37,10 @@ svg {
     align-items: center;
     font-size: 20px;
     font-weight: 700;
+}
+
+.bar-container {
+    height: 20px;
 }
 
 @media(max-width:460px) {
@@ -47,5 +51,13 @@ svg {
 
     .user-info-container {
         font-size: 4vw;
+    }
+
+    .back-arrow {
+        font-size: medium;
+    }
+
+    svg {
+        margin: 20px 0;
     }
 }

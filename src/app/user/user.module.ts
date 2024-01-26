@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { AnimationDirective } from './directives/animation.directive';
 import { StoreModule } from '@ngrx/store';
+import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
 @NgModule({
   declarations: [
     HomepageComponent,
@@ -15,6 +16,7 @@ import { StoreModule } from '@ngrx/store';
     UsermainComponent,
     HeaderComponent,
     AnimationDirective,
+    ProgressBarComponent
   ],
   imports: [
     CommonModule,

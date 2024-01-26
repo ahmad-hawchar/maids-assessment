@@ -7,7 +7,7 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 export class AnimationDirective {
   //this directives changes the position of the list item on hover by using transform translate in css
   //it also adds a box shadow. and it brings the element back to its original place on mouse out and 
-  //it removes the box shadow
+  //removes the box shadow
   constructor(private el: ElementRef, private renderer: Renderer2) {
     this.renderer.setStyle(this.el.nativeElement, 'transition', 'box-shadow 250ms ease-in-out, transform 250ms ease-in-out');
   }

@@ -1,4 +1,7 @@
 <div class="user-profile-page-container">
+    <div class="bar-container">
+        <app-progress-bar [progress]="progress" *ngIf="!loaded"></app-progress-bar>
+    </div>
     <div class="back-arrow">
         <svg routerLink="/user/homepage" xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
