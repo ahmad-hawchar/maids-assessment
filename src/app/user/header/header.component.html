@@ -1,7 +1,8 @@
 <div class="header-container">
     <div class="header">
         <div class="search-bar">
-            <input type="text" class="text-inputs-global" placeholder="search by name, email or Id!" />
+            <input #searchInput type="text" class="text-inputs-global" placeholder="search by name, email or Id!"
+                (change)="onSearchChange(searchInput.value)" />
         </div>
     </div>
 </div>
