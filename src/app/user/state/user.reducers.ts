@@ -9,6 +9,5 @@ export const initialState: SearchState = {
 //changes the old searchText value from the store to the new value provided by the action
 export const searchReducer = createReducer(
     initialState,
-    on(updateSearch, (state, { searchContent }) => ({ searchText: searchContent })),
-    on(loadSearchContent, (state) => ({ ...state }))
+    on(updateSearch, (state, { searchContent }) => ({ searchText: searchContent }))
 )

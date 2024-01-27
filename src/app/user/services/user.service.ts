@@ -10,6 +10,7 @@ export class userService {
   backendUrl: string = "https://reqres.in/api/users";
   private cache = new Map<number, User>();
   constructor(private http: HttpClient) { }
+
   fetchUsers(page: number = 1) {
     return this.http.get(`${this.backendUrl}?page=${page}`).pipe(
       map((res) => {
